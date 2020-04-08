@@ -1,0 +1,96 @@
+﻿
+@{
+    string height = ((int)ViewBag.letters.rowCount * 40).ToString() + ";";
+}
+
+<html>
+<head>
+    <title>Letters</title>
+</head>
+<body>
+
+    <p>@ViewBag.FileName</p>
+
+    <table class="table-bordered" style="width: 300px;">
+        <tr>
+            <td>
+                letters
+            </td>
+            <td>
+                <b>@ViewBag.letters.letters</b>  
+            </td>
+        </tr>
+        <tr>
+            <td>
+                rowCount
+            </td>
+            <td>
+                @ViewBag.letters.rowCount
+            </td>
+        </tr>
+        <tr>
+            <td>
+                colCount
+            </td>
+            <td>
+                @ViewBag.letters.colCount
+            </td>
+        </tr>
+        <tr>
+            <td>
+                type
+            </td>
+            <td>
+                @ViewBag.letters.type
+            </td>
+
+        </tr>
+
+    </table>
+    <br />
+    <table class="table-bordered" style="width: 300px;">
+        <tr><td>Words : </td></tr>
+
+        @for (int i = 0; i < ViewBag.letters.words.Count; i++)
+        {
+            <tr>
+                <td>
+                    @ViewBag.letters.words[i].word
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <table class="table-bordered" style="width: 300px; height: @height">
+
+        @for (int i = 0; i < (int)ViewBag.letters.rowCount; i++)
+        {
+            <tr style="height: 40px;">
+
+                @for (int j = 0; j < (int)ViewBag.letters.colCount; j++)
+                {
+                    if (ViewBag.strArr[i, j].Trim() == "")
+                    {
+                        <td style="background-color: lightgray;"></td>
+                    }
+                    else
+                    {
+                        <td style="text-align:center; font-weight:bold;">@ViewBag.strArr[i, j]</td>
+                    }
+                }
+            </tr>
+        }
+    </table>
+
+    <br />
+    <p>Extra Words: </p>
+
+        @for(int i=0; i< ViewBag.strWrd.Count; i++)
+        {
+           <label> @ViewBag.strWrd[i].ToString() </label><br/>
+        }
+
+
+</body>
+</html>

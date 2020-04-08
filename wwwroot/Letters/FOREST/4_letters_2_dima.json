@@ -1,0 +1,49 @@
+{
+   "rowCount":5,
+   "colCount":5,
+   "type":0,
+   "letters":"DFIN",
+   "words":[
+      {
+         "word":"FDNI",
+         "vertical":true,
+         "rowIndex":0,
+         "colIndex":2,
+         "coinIndices":[
+
+         ],
+         "awardCoins":false
+      },
+      {
+         "word":"NIF",
+         "vertical":false,
+         "rowIndex":0,
+         "colIndex":2,
+         "coinIndices":[
+
+         ],
+         "awardCoins":false
+      },
+      {
+         "word":"NID",
+         "vertical":true,
+         "rowIndex":2,
+         "colIndex":0,
+         "coinIndices":[
+
+         ],
+         "awardCoins":false
+      },
+      {
+         "word":"FNID",
+         "vertical":false,
+         "rowIndex":2,
+         "colIndex":0,
+         "coinIndices":[
+
+         ],
+         "awardCoins":false
+      }
+   ],
+   "id":"4796eb2358563febe24e642714b49d01"
+}

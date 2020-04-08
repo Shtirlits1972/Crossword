@@ -1,0 +1,36 @@
+﻿@model List<Folder>
+
+<html>
+<head>
+    <title>Список файлов</title>
+
+    <script src="~/js/View/Home/Index.js"></script>
+</head>
+<body>
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+
+            <table style="width: 200px;">
+                <tr>
+                    <td style="align-content: start;">@Model[i].FolderName</td>
+                    <td style="float: right;">
+                        <a href="#" style="font-size: small;" id="@("href" + Model[i].FolderName)" onclick="openDiv('@Model[i].FolderName')">open</a>
+                    </td>
+                </tr>
+            </table>
+
+           <div id="@("div" + Model[i].FolderName)"  style="overflow: auto; max-width: 300px; border: solid 1px blue; padding: 5px; display: none;">
+               @for (int j = 0; j < Model[i].files.Count; j++)
+               {
+                   @Html.ActionLink((j+1) + ".  "+  Model[i].files[j], "Letters", "Home", new {  filename = Model[i].files[j], foldername = Model[i].FolderName })<br />
+               }
+
+           </div>
+        }
+
+</body>
+</html>
+
+
+
